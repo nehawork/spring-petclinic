@@ -100,9 +100,9 @@ public class PetControllerTests {
 
     @Test
     public void testProcessUpdateFormHasErrors() throws Exception {
-        mockMvc.perform(post("/ownerscvbnm/{ownerId}/pets/{petId}/edit", TEST_OWNER_ID, TEST_PET_ID)
+        mockMvc.perform(post("/owners/{ownerId}/pets/{petId}/edit", TEST_OWNER_ID, TEST_PET_ID)
             .param("name", "Betty")
-            .param("birthDate", "201522/022255/128528")
+            .param("birthDate", "2015/02/12")
         )
             .andExpect(model().attributeHasNoErrors("owner"))
             .andExpect(model().attributeHasErrors("pet"))
